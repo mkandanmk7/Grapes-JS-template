@@ -69,6 +69,42 @@ const GrapesjsMain = () => {
         },
       ],
     });
+
+    // Define commands
+    editor.Commands.add("show-layers", {
+      getRowEl(editor) {
+        return editor.getContainer().closest(".editor-row");
+      },
+      getLayersEl(row) {
+        return row.querySelector(".layers-container");
+      },
+
+      run(editor, sender) {
+        const lmEl = this.getLayersEl(this.getRowEl(editor));
+        lmEl.style.display = "";
+      },
+      stop(editor, sender) {
+        const lmEl = this.getLayersEl(this.getRowEl(editor));
+        lmEl.style.display = "none";
+      },
+    });
+    editor.Commands.add("show-styles", {
+      getRowEl(editor) {
+        return editor.getContainer().closest(".editor-row");
+      },
+      getStyleEl(row) {
+        return row.querySelector(".styles-container");
+      },
+
+      run(editor, sender) {
+        const smEl = this.getStyleEl(this.getRowEl(editor));
+        smEl.style.display = "";
+      },
+      stop(editor, sender) {
+        const smEl = this.getStyleEl(this.getRowEl(editor));
+        smEl.style.display = "none";
+      },
+    });
   };
 
   const loadGrapesJS = async () => {
@@ -80,6 +116,7 @@ const GrapesjsMain = () => {
     <>
       <div className="panel__top">
         <div className="panel__basic-actions"></div>
+        <div class="panel__switcher"></div>
       </div>
       <div className="editor-row">
         <div className="editor-canvas">
@@ -88,7 +125,8 @@ const GrapesjsMain = () => {
           </div>
         </div>
         <div className="panel__right">
-          <div className="layers-container"></div>
+          <div class="layers-container"></div>
+          <div class="styles-container"></div>
         </div>
       </div>
       <div id="blocks"></div>

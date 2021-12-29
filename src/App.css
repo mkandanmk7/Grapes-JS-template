@@ -8,11 +8,16 @@
   height: 100%;
 }
 
-.gjs-block {
-  z-index: 2;
-  width: auto;
-  height: auto;
-  min-height: auto;
+#blocks {
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+
+  width: 200px;
+  height: 25px;
+  position: absolute;
+  top: 80px;
+  right: 250px;
 }
 .panel__top {
   padding: 0;
@@ -42,4 +47,7 @@
   flex-basis: 230px;
   position: relative;
   overflow-y: auto;
+}
+.panel__switcher {
+  position: initial;
 }
