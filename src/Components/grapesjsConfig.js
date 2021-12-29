@@ -14,7 +14,7 @@ const GrapesJSConfig = () => {
       blocks: [
         {
           id: "section", // id is mandatory
-          label: "<b>Section</b>", // You can use HTML/SVG inside labels
+          label: "<b>Section Custom</b>", // You can use HTML/SVG inside labels
           attributes: { class: "gjs-block-section" },
           content: `<section>
               <h1>This is a simple title</h1>
@@ -40,12 +40,12 @@ const GrapesJSConfig = () => {
         },
       ],
     },
-    plugins: ["grapesjs-mjml"],
-    pluginsOpts: {
-      "grapesjs-mjml": {
-        resetDevices: false, // so we can use the device buttons
-      },
-    },
+    // plugins: ["grapesjs-mjml"],
+    // pluginsOpts: {
+    //   "grapesjs-mjml": {
+    //     resetDevices: false, // so we can use the device buttons
+    //   },
+    // },
     // Disable the storage manager for the moment
     storageManager: false,
     // Avoid any default panel
