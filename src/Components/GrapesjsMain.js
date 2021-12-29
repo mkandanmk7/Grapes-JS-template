@@ -6,6 +6,7 @@ import GrapesJSConfig from "./grapesjsConfig";
 const GrapesjsMain = () => {
   useEffect(() => {
     loadGrapesJS();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadComponents = (editor) => {
@@ -40,20 +41,20 @@ const GrapesjsMain = () => {
         {
           id: "visibility",
           active: true, // active by default
-          className: "btn-toggle-borders",
+          classNameName: "btn-toggle-borders",
           label: "<u>B</u>",
           command: "sw-visibility", // Built-in command
         },
         {
           id: "export",
-          className: "btn-open-export",
+          classNameName: "btn-open-export",
           label: "Exp",
           command: "export-template",
           context: "export-template", // For grouping context of buttons from the same panel
         },
         {
           id: "show-json",
-          className: "btn-show-json",
+          classNameName: "btn-show-json",
           label: "JSON",
           context: "show-json",
           command(editor) {
@@ -77,19 +78,18 @@ const GrapesjsMain = () => {
 
   return (
     <>
-      <div class="panel__top">
-        <div class="panel__basic-actions"></div>
+      <div className="panel__top">
+        <div className="panel__basic-actions"></div>
       </div>
-      <div id="gjs">
-        <mjml>
-          <mj-body>
-            <mj-container>
-              <mj-section>
-                <p>Hello World Component</p>
-              </mj-section>
-            </mj-container>
-          </mj-body>
-        </mjml>
+      <div className="editor-row">
+        <div className="editor-canvas">
+          <div id="gjs">
+            <h1>Hello World Component!</h1>
+          </div>
+        </div>
+        <div className="panel__right">
+          <div className="layers-container"></div>
+        </div>
       </div>
       <div id="blocks"></div>
     </>
@@ -97,3 +97,16 @@ const GrapesjsMain = () => {
 };
 
 export default GrapesjsMain;
+
+// mjml
+// <div id="gjs">
+// <mjml>
+//   <mj-body>
+//     <mj-container>
+//       <mj-section>
+//         <p>Hello World Component</p>
+//       </mj-section>
+//     </mj-container>
+//   </mj-body>
+// </mjml>
+// </div>
