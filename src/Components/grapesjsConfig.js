@@ -71,9 +71,19 @@ const GrapesJSConfig = () => {
               command: "show-styles",
               togglable: false,
             },
+            {
+              id: "show-traits",
+              active: true,
+              label: "Traits",
+              command: "show-traits",
+              togglable: false,
+            },
           ],
         },
       ],
+    },
+    traitManager: {
+      appendTo: ".traits-container",
     },
     // The Selector Manager allows to assign classes and
     // different states (eg. :hover) on components.
@@ -82,6 +92,7 @@ const GrapesJSConfig = () => {
     selectorManager: {
       appendTo: ".styles-container",
     },
+
     styleManager: {
       appendTo: ".styles-container",
       sectors: [
