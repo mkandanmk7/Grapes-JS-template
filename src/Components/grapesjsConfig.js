@@ -7,10 +7,9 @@ const GrapesJSConfig = () => {
     // As an alternative we could use: `components: '<h1>Hello World Component!</h1>'`,
     fromElement: true,
     // Size of the editor
-    height: "500px",
+    height: "95vh",
     width: "auto",
-    // Disable the storage manager for the moment
-    storageManager: false,
+
     // Avoid any default panel
 
     blockManager: {
@@ -195,6 +194,25 @@ const GrapesJSConfig = () => {
           widthMedia: "480px", // this value will be used in CSS @media
         },
       ],
+    },
+
+    // ...storage on local
+    storageManager: {
+      id: "gjs-", // Prefix identifier that will be used inside storing and loading
+      // type: "local", // Type of the storage
+      autosave: true, // Store data automatically
+      autoload: true, // Autoload stored data on init
+      // stepsBeforeSave: 1, // If autosave enabled, indicates how many changes are necessary before store method is triggered
+      storeComponents: true, // Enable/Disable storing of components in JSON format
+      storeStyles: true, // Enable/Disable storing of rules in JSON format
+      storeHtml: true, // Enable/Disable storing of components as HTML string
+      storeCss: true, // Enable/Disable storing of rules as CSS string
+      type: "local",
+      stepsBeforeSave: 10,
+      urlStore: "http://store/endpoint",
+      urlLoad: "http://load/endpoint",
+      params: {}, // Custom parameters to pass with the remote storage request, eg. CSRF token
+      headers: {}, // Custom headers for the remote storage request
     },
 
     // plugins: ["grapesjs-mjml"],

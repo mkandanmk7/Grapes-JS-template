@@ -123,14 +123,15 @@ const GrapesjsMain = () => {
     });
 
     // Responsive styles Commands
+    // editor.setDevice("Mobile"); //mobile first Approach
+    editor.Commands.add("set-device-mobile", {
+      run: (editor) => editor.setDevice("Mobile"),
+    });
     editor.Commands.add("set-device-desktop", {
       run: (editor) => editor.setDevice("Desktop"),
     });
     editor.Commands.add("set-device-tablet", {
       run: (editor) => editor.setDevice("Tablet"),
-    });
-    editor.Commands.add("set-device-mobile", {
-      run: (editor) => editor.setDevice("Mobile"),
     });
   };
 
@@ -143,8 +144,8 @@ const GrapesjsMain = () => {
     <>
       <div className="panel__top">
         <div className="panel__basic-actions"></div>
-        <div class="panel__devices"></div>
-        <div class="panel__switcher"></div>
+        <div className="panel__devices"></div>
+        <div className="panel__switcher"></div>
       </div>
       <div className="editor-row">
         <div className="editor-canvas">
@@ -153,9 +154,9 @@ const GrapesjsMain = () => {
           </div>
         </div>
         <div className="panel__right">
-          <div class="layers-container"></div>
-          <div class="styles-container"></div>
-          <div class="traits-container"></div>
+          <div className="layers-container"></div>
+          <div className="styles-container"></div>
+          <div className="traits-container"></div>
         </div>
       </div>
       <div id="blocks"></div>
