@@ -80,6 +80,33 @@ const GrapesJSConfig = () => {
             },
           ],
         },
+        // Device Panel...
+        {
+          id: "panel-devices",
+          el: ".panel__devices",
+          buttons: [
+            {
+              id: "device-desktop",
+              label: "Desktop",
+              command: "set-device-desktop",
+              active: true,
+              togglable: false,
+            },
+            {
+              id: "device-tablet",
+              label: "Tablet",
+              command: "set-device-tablet",
+              active: true,
+              togglable: false,
+            },
+            {
+              id: "device-mobile",
+              label: "Mobile",
+              command: "set-device-mobile",
+              togglable: false,
+            },
+          ],
+        },
       ],
     },
     traitManager: {
@@ -100,7 +127,15 @@ const GrapesJSConfig = () => {
           name: "Dimension",
           open: false,
           // Use built-in properties
-          buildProps: ["width", "min-height", "height", "padding", "margin"],
+          buildProps: [
+            "width",
+            "min-height",
+            "height",
+            "padding",
+            "margin",
+            "display",
+            "position",
+          ],
           // Use `properties` to define/override single property
           properties: [
             {
@@ -139,6 +174,25 @@ const GrapesJSConfig = () => {
               ],
             },
           ],
+        },
+      ],
+    },
+    // ...
+    deviceManager: {
+      devices: [
+        {
+          name: "Desktop",
+          width: "", // default size
+        },
+        {
+          name: "Tablet",
+          width: "720px",
+          widthMedia: "768px", // this value will be used on canvas width
+        },
+        {
+          name: "Mobile",
+          width: "320px", // this value will be used on canvas width
+          widthMedia: "480px", // this value will be used in CSS @media
         },
       ],
     },

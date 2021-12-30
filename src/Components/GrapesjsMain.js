@@ -121,6 +121,17 @@ const GrapesjsMain = () => {
         this.getTraitsEl(editor).style.display = "none";
       },
     });
+
+    // Responsive styles Commands
+    editor.Commands.add("set-device-desktop", {
+      run: (editor) => editor.setDevice("Desktop"),
+    });
+    editor.Commands.add("set-device-tablet", {
+      run: (editor) => editor.setDevice("Tablet"),
+    });
+    editor.Commands.add("set-device-mobile", {
+      run: (editor) => editor.setDevice("Mobile"),
+    });
   };
 
   const loadGrapesJS = async () => {
@@ -132,6 +143,7 @@ const GrapesjsMain = () => {
     <>
       <div className="panel__top">
         <div className="panel__basic-actions"></div>
+        <div class="panel__devices"></div>
         <div class="panel__switcher"></div>
       </div>
       <div className="editor-row">
