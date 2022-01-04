@@ -25,6 +25,11 @@ const GrapesJSConfig = () => {
           </section>`,
         },
         {
+          id: "cu-input",
+          label: "Input-Cu",
+          content: '<input  data-gjs-type="cu-input" type="text"/>',
+        },
+        {
           id: "text",
           label: "Text",
           content: '<div data-gjs-type="text">Insert your text here</div>',
@@ -110,7 +115,9 @@ const GrapesJSConfig = () => {
     },
     traitManager: {
       appendTo: ".traits-container",
+      // TraitManger: [{ name: "button", label: "Add", type: "buttonLogin" }],
     },
+
     // The Selector Manager allows to assign classes and
     // different states (eg. :hover) on components.
     // Generally, it's used in conjunction with Style Manager
