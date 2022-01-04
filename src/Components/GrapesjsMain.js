@@ -168,7 +168,8 @@ const GrapesjsMain = () => {
   };
 
   const loadGrapesJS = async () => {
-    const editor = await grapesjs.init(GrapesJSConfig());
+    const editor = await grapesjs.init(GrapesJSConfig()); // config is  objects
+    console.log(editor);
     loadComponents(editor);
   };
 
