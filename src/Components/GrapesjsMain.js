@@ -40,6 +40,30 @@ const GrapesjsMain = () => {
         },
       },
     });
+    editor.DomComponents.addType("image", {
+      isComponent: (el) => el.tagName === "INPUT",
+      model: {
+        defaults: {
+          traits: [
+            {
+              type: "button",
+              // ...
+              text: "Click me",
+              full: true, // Full width button
+              command: (editor) => {
+                const selectedComponent = editor.getSelected();
+                editor.runCommand("open-assets  ", {
+                  target: selectedComponent,
+                });
+              },
+            },
+          ],
+          // As by default, traits are binded to attributes, so to define
+          // their initial value we can use attributes
+          attributes: { type: "button", required: true },
+        },
+      },
+    });
 
     editor.BlockManager.add("my-block-id", {
       // ...
